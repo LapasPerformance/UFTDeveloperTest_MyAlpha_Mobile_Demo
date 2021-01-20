@@ -17,6 +17,16 @@ variables:
 steps:
 - task: NuGetToolInstaller@1
 
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      C:\Users\demo\source\repos\Solution1\UFTDeveloperTest_MyAlphaWeb_Demo\bin\Debug\UFTDeveloperTest_MyAlphaWeb_Demo.dll
+    searchFolder: 'C:\Users\demo\source\repos\Solution1\UFTDeveloperTest_MyAlphaWeb_Demo\bin\Debug'
+    resultsFolder: 'C:\Users\demo\Documents\Unified Functional Testing\UFT\UFTWorking\res'
+    vsTestVersion: '16.0'
+    testRunTitle: 'eee'
+
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
